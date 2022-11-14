@@ -754,20 +754,20 @@ EOF
 
 allow_port() {
 
-    if [[ $(command -v yum) ]]; then
+   # if [[ $(command -v yum) ]]; then
 
-        firewall-cmd --zone=public --add-port=$naive_port/tcp --permanent
-        firewall-cmd --zone=public --add-port=$naive_port/udp --permanent
-        firewall-cmd --reload
+    #    firewall-cmd --zone=public --add-port=$naive_port/tcp --permanent
+    #    firewall-cmd --zone=public --add-port=$naive_port/udp --permanent
+    #    firewall-cmd --reload
 
-    fi
-    if [[ $(command -v apt-get) ]]; then
+   # fi
+   # if [[ $(command -v apt-get) ]]; then
 
         iptables -I INPUT -p tcp --dport $naive_port -j ACCEPT
         iptables -I INPUT -p udp --dport $naive_port -j ACCEPT
         iptables-save
 
-    fi
+   # fi
     echo 
     echo "........... 防火墙已开放端口$naive_port  .........."
 }
