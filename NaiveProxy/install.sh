@@ -763,9 +763,9 @@ allow_port() {
    # fi
    # if [[ $(command -v apt-get) ]]; then
 
-        iptables -I INPUT -p tcp --dport $naive_port -j ACCEPT
-        iptables -I INPUT -p udp --dport $naive_port -j ACCEPT
-        iptables-save
+   #     iptables -I INPUT -p tcp --dport $naive_port -j ACCEPT
+   #     iptables -I INPUT -p udp --dport $naive_port -j ACCEPT
+   #     iptables-save
 
    # fi
     echo 
